@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// by @YoussefMoataz
 struct dominoT {
     int leftDots;
     int rightDots;
@@ -13,10 +14,12 @@ struct dominoT {
     }
 };
 
+// by @YoussefMoataz
 vector<dominoT> dominoPieces;
 vector<dominoT> temp;
 int mainSize;
 
+// by @Seif-Ibrahim1
 bool solve(vector<dominoT> &dominos) {
     
     for(int i = 0; i < mainSize; i++) {
@@ -43,6 +46,7 @@ bool solve(vector<dominoT> &dominos) {
 
 int main() {
 
+    // by @YoussefMoataz
     dominoPieces.push_back(dominoT(1, 4));
     dominoPieces.push_back(dominoT(2, 6));
     dominoPieces.push_back(dominoT(4, 4));
@@ -55,12 +59,9 @@ int main() {
 
 
     if (solve(dominoPieces)) {
-        cout << "Done" << endl;;
-    } else {
-        cout << "Failed" << endl;;
-    }
+        cout << "Done" << endl;
 
-    for (int i = 0; i < temp.size(); ++i) {
+        for (int i = 0; i < temp.size(); ++i) {
         cout << temp[i].leftDots << "|" << temp[i].rightDots;
         if(i != temp.size() - 1) {
             cout << " - ";
@@ -68,5 +69,10 @@ int main() {
     }
     cout << endl;
 
+    } else {
+        cout << "Failed" << endl;
+    }
+
+ 
     return 0;
 }
